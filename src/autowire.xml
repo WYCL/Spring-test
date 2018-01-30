@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--address注入-->
+    <bean id="address" class="com.wangchao.spring.Address"
+          p:city="beijing" p:street="昌平"
+    >
+    </bean>
+    <!--Car注入-->
+    <bean id="car" class="com.wangchao.spring.Car">
+        <property name="brand" value="QQ"></property>
+        <property name="price" value="10000"/>
+    </bean>
+    <!--自动注入（缺点会自动装配对应的bean内的所有的属性的）-->
+    <!--byName：根据IOC容器中已经注入的bean的id，与要装配的bean的set风格的属性
+    名进行匹配，如果能匹配上就注入，匹配不上不报错，会直接显示该属性值为null-->
+    <!--byType：根据ICO容器中已经存在的bean的类型与要装配的bean的属性的类型进行装配的，
+    但该装配方式只能装配IOC容器中存在的一个bean，不能出现同类型不同名称的bean，这样会报错的-->
+    <bean class="com.wangchao.spring.Person" id="persons" autowire="byType"
+          p:name="玉皇大帝"/>
+</beans>

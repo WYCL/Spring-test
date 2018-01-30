@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="helloWorld" class="com.wangchao.test_spring.HelloWorld">
+
+    <property name="name" value="SpringTest"></property>
+</bean>
+    <bean id="a" class="com.wangchao.test_spring.A">
+
+        <property name="age" value="24"></property>
+        <property name="gender" >
+            <value><![CDATA[<<男>>]]></value>
+        </property>
+    </bean>
+</beans>
